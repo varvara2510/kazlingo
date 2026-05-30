@@ -18,28 +18,40 @@ export default function Home({ t }) {
         <p>{t.lingEnd}</p>
       </section>
 
-      <section className="oly-section">
-        <div className="oly-text">
-          <h2>{t.whatAreOly}</h2>
-          <p>{t.olyIntro}</p>
-          <p>{t.olyFormat}</p>
-        </div>
+      <section className="home-section">
+        <h2>{t.whatAreOly}</h2>
 
-        <div className="oly-image">
-          <img src="/images/team_2026.jpg" alt="Kazakh team at IOL" />
-        </div>
+        <img
+          src="/images/team_2026.jpg"
+          alt="Kazakh team at IOL"
+          className="floating-image"
+        />
+
+        <p>{t.olyIntro}</p>
+        <p>{t.olyFormat}</p>
       </section>
 
-      <p className="cta-inline">
-        {t.ctaStart}{" "}
-        <Link to="/participate" className="inline-link">
-          {t.ctaParticipate}
-        </Link>{" "}
-        {t.ctaOr}{" "}
-        <Link to="/faq" className="inline-link">
-          {t.ctaFaq}
-        </Link>
-      </p>
+      <section className="home-section">
+        <h2>{t.whyParticipate}</h2>
+        <p>{t.whyParticipateP1}</p>
+        <p>{t.whyParticipateP2}</p>
+        <p>{t.whyParticipateP3}</p>
+      </section>
+
+      <section className="home-cta">
+        <h2>{t.readyToStart}</h2>
+        <p>{t.ctaStart}</p>
+
+        <div className="cta-buttons">
+          <Link to="/participate" className="cta-button">
+            {t.ctaParticipate}
+          </Link>
+
+          <Link to="/faq" className="cta-button secondary">
+            {t.ctaFaq}
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

@@ -29,13 +29,32 @@ footer a {
 }
 
 #menu {
-  position: fixed;
-  top: 0;
-  left: 50px;
-  right: 50px;
+  max-width: 1200px;
+  margin: 24px auto 40px;
   background: white;
-  z-index: 1000;
-  padding-top: 20px;
+  border-top: 1.5px solid #FFC200;
+  border-bottom: 1.5px solid #FFC200;
+}
+
+.menu-inner {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 24px;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-logo {
+  height: 80px;
+  width: auto;
+  display: block;
 }
 
 #menu ul {
@@ -44,37 +63,31 @@ footer a {
   list-style: none;
 }
 
-#menu > ul {
-  float: left;
-}
-
 #menu li {
   display: inline-block;
-  transition: background-color 4s, color 4s;
 }
 
-#menu li a {
+#menu li a,
+.dropbtn {
   color: black;
   text-align: center;
   padding: 14px 16px;
   font-size: large;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-#menu li a:hover {
+#menu li a:hover,
+.dropbtn:hover {
   background-color: #FFC200;
-  color: white;
-  transition: background-color 1s, color 0.2s;
-  transition-delay: 1ms;
+  color: black;
 }
 
-#langs {
-  float: right;
-}
-
-#langs li {
-  display: inline-block;
+#langs ul {
+  display: flex;
+  gap: 4px;
 }
 
 #langs button {
@@ -84,19 +97,15 @@ footer a {
   font-size: large;
   font-family: "Philosopher", sans-serif;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 14px 10px;
 }
 
 #langs button:hover {
   text-decoration: underline;
 }
 
-#langs button:active {
-  color: black;
-}
-
 .menu-spacer {
-  height: 90px;
+  display: none;
 }
 
 .past {
@@ -227,8 +236,26 @@ footer a {
 }
 
 .home-page {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
+}
+
+.home-page h1 {
+  margin: 50px 0 45px;
+}
+
+.home-page section {
+  margin-bottom: 56px;
+}
+
+.home-page h2 {
+  margin: 0 0 20px;
+}
+
+.home-page p {
+  max-width: 820px;
+  line-height: 1.55;
+  margin: 0 0 16px;
 }
 
 .home-section {
@@ -237,33 +264,49 @@ footer a {
 
 .home-list {
   font-size: large;
+  line-height: 1.5;
+  margin: 0 0 20px;
 }
 
-.oly-section {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-.oly-text {
-  flex: 1;
-  max-width: 760px;
-}
-
-.oly-image {
-  flex-shrink: 0;
-}
-
-.oly-image img {
+.floating-image {
+  float: right;
   width: 360px;
-  max-width: 100%;
-  border-radius: 6px;
-  display: block;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
-.cta-inline {
-  margin-top: 40px;
-  max-width: 950px;
+.home-cta {
+  max-width: 820px;
+  background-color: #f9f9f9;
+  border-left: 5px solid #FFC200;
+  padding: 24px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 20px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #FFC200;
+  color: black;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: large;
+}
+
+.cta-button.secondary {
+  background-color: white;
+  border: 2px solid #FFC200;
+}
+
+.cta-button:hover {
+  opacity: 0.85;
 }

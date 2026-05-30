@@ -25,54 +25,64 @@ function AppContent() {
   return (
     <div>
       <div id="menu">
-        <ul>
-          <li>
-            <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
-              {t.home || "Home"}
-            </NavLink>
-          </li>
+        <div className="menu-inner">
+          <div className="menu-left">
+            <img
+              src="/images/kazling_logo_more_space2.svg"
+              alt="KazLingO logo"
+              className="site-logo"
+            />
 
-          <li className="dropdown">
-            <span className={`dropbtn ${problemsActive ? 'active' : ''}`}>
-              {t.problems || "Problems"}
-              <span className="dropdown-arrow">▾</span>
-            </span>
+            <ul className="main-nav">
+              <li>
+                <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
+                  {t.home || "Home"}
+                </NavLink>
+              </li>
 
-            <div className="dropdown-content">
-              <NavLink to="/past" className={({ isActive }) => isActive ? "active" : ""}>
-                {t.past || "Past Competitions"}
-              </NavLink>
-              <NavLink to="/preparation" className={({ isActive }) => isActive ? "active" : ""}>
-                {t.preparation || "Preparation"}
-              </NavLink>
-            </div>
-          </li>
+              <li className="dropdown">
+                <span className={`dropbtn ${problemsActive ? 'active' : ''}`}>
+                  {t.problems || "Problems"}
+                  <span className="dropdown-arrow">▾</span>
+                </span>
 
-          <li>
-            <NavLink to="/participate" className={({ isActive }) => isActive ? "active" : ""}>
-              {t.participate}
-            </NavLink>
-          </li>
+                <div className="dropdown-content">
+                  <NavLink to="/past" className={({ isActive }) => isActive ? "active" : ""}>
+                    {t.past || "Past Competitions"}
+                  </NavLink>
+                  <NavLink to="/preparation" className={({ isActive }) => isActive ? "active" : ""}>
+                    {t.preparation || "Preparation"}
+                  </NavLink>
+                </div>
+              </li>
 
-          <li>
-            <NavLink to="/kziol" className={({ isActive }) => isActive ? "active" : ""}>
-              {t.kziol}
-            </NavLink>
-          </li>
+              <li>
+                <NavLink to="/participate" className={({ isActive }) => isActive ? "active" : ""}>
+                  {t.participate}
+                </NavLink>
+              </li>
 
-          <li>
-            <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>
-              {t.about}
-            </NavLink>
-          </li>
-        </ul>
+              <li>
+                <NavLink to="/kziol" className={({ isActive }) => isActive ? "active" : ""}>
+                  {t.kziol}
+                </NavLink>
+              </li>
 
-        <div id="langs">
-          <ul>
-            <li><button onClick={() => setLang('kz')}>KZ</button></li>
-            <li><button onClick={() => setLang('ru')}>RU</button></li>
-            <li><button onClick={() => setLang('en')}>EN</button></li>
-          </ul>
+              <li>
+                <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>
+                  {t.about}
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+
+          <div id="langs">
+            <ul>
+              <li><button onClick={() => setLang('kz')}>KZ</button></li>
+              <li><button onClick={() => setLang('ru')}>RU</button></li>
+              <li><button onClick={() => setLang('en')}>EN</button></li>
+            </ul>
+          </div>
         </div>
       </div>
 
